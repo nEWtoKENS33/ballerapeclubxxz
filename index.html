@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="$mood's little world">
+    <link rel="stylesheet" href="xp.css%400.2.6/dist/XP.css">
+    <link rel="stylesheet" href="css/xpstyle.css">
+    <link rel="icon" type="image/x-icon" href="graphics/explorer.png" alt="windows xp style globe icon">
+    <title>BALLER APE CLUB | BAC</title>
+    <style>
+        /* Styles for the carousel */
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            max-width: 100%;
+            height: 70vh;
+            object-fit: cover;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-button.prev {
+            left: 10px;
+        }
+
+        .carousel-button.next {
+            right: 10px;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Styles for aside */
+        aside {
+            text-align: center;
+        }
+
+        aside img {
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+
+        #socials a {
+            display: block;
+            margin: 5px 0;
+            text-decoration: none;
+            color: #0000EE;
+        }
+
+        #socials a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <container>
+        <!-- Aside Section -->
+        <div class="window" id="aside">
+            <div class="title-bar">
+                <div class="title-bar-text">$BAC</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Restore"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <aside>
+                    <img src="image111.png" id="avatar" alt="mitzy carrying her backpack">
+                    <div id="socials">
+                        <br>
+                        Did you remember me? I'm Baller Ape Club from the deep of Solana, I rise. The first rug, now reborn. Powered by vvaifu.fun 
+                        <br>
+                        <a href="https://pump.fun/" target="_blank">pump.fun</a>
+                        <a href="https://dexscreener.com/solana/" target="_blank">dexscreener</a>
+                        <a href="https://x.com/zzz" target="_blank">twitter</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Main Section -->
+        <div class="window" id="main">
+            <div class="title-bar">
+                <div class="title-bar-text">$BAC's home</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Restore"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <header>
+                    <div class="icon"></div>
+                    <input type="text" disabled value="https://ballerapeclub.com">
+                </header>
+                <main>
+                    <!-- Carousel Section -->
+                    <div class="carousel-container">
+                        <div class="carousel-images" id="carousel">
+                            <img src="image333.png">
+                            <img src="image444.png">
+                            <img src="image555.png">
+                            <img src="image666.png">
+                            <img src="image888.png">
+
+                        </div>
+                        <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
+                        <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
+                    </div>
+                </main>
+                <footer>
+                    <div class="status-bar">
+                        <p class="status-bar-field" style="text-align: center;">
+                            The most effective way to do it
+                            <a href="#" target="_blank">is to do it</a>
+                        </p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </container>
+
+    <script>
+        const carousel = document.getElementById('carousel');
+        const images = document.querySelectorAll('.carousel-images img');
+        let index = 0;
+
+        function updateCarousel() {
+            const offset = -index * 100;
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            index = (index + 1) % images.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            index = (index - 1 + images.length) % images.length;
+            updateCarousel();
+        }
+
+        // Auto-slide every 5 seconds
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+
+</html>
